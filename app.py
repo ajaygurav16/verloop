@@ -5,19 +5,7 @@ import requests
 app = Flask(__name__)
 
         
-@app.route('/')
-def index():
-    return jsonify({
-       'author': 'Ajay Gurav',
-       'author_url': 'http://ajaygurav.online',
-      
-       
-   })
 
-
-if __name__ == '__main__':
-    # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True, port=5000)
   
 @app.route('/gettop3repos',methods=["POST"])
 def gettop3repos():
@@ -86,3 +74,19 @@ def gettop3repos():
 
     else:
         return "415 Unsupported Media Type ;)"
+        
+        
+        
+@app.route('/')
+def index():
+    return jsonify({
+       'author': 'Ajay Gurav',
+       'author_url': 'http://ajaygurav.online',
+      
+       
+   })
+
+
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
